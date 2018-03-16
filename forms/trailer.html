@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<title>Trailer - TruckIt</title>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="author" content="Heather Sawatsky"/>
+<meta name="application-name" content="TruckIt"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+
+<link rel="stylesheet" href="form.css"/>
+
+<form id="trailerForm" class="form">
+	<header id="trailerHeader">
+		<h2>Create / Edit a Trailer</h2>
+	</header>
+	
+	<section id="trailerContent">
+		<fieldset class="form-field" name="rentedOrOwned">
+			<legend>Rented or Owned</legend>
+			<input id="trailer-rented-input" class="form-input" name="rentedOrOwned" type="radio" value="rented" aria-describedby="trailer-rented-tooltip" checked aria-checked="true" required autofocus/>
+			<label id="trailer-rented-label" class="form-label" for="trailer-rented-input">Rented</label>
+			<div id="trailer-rented-tooltip" class="form-tooltip" role="tooltip">The trailer is rented</div>
+
+			<br/>
+
+			<input id="trailer-owned-input" class="form-input" name="rentedOrOwned" type="radio" value="owned" aria-describedby="trailer-owned-tooltip" aria-checked="false" required/>
+			<label id="trailer-owned-label" class="form-label" for="trailer-owned-input">Owned</label>
+			<div id="trailer-owned-tooltip" class="form-tooltip" role="tooltip">The trailer is owned</div>
+		</fieldset>
+		
+		<div class="form-field">
+			<label id="trailer-axleCount-label" class="form-label" for="trailer-axleCount-input">Axle Count</label>
+			<input id="trailer-axleCount-input" class="form-input" name="axleCount" type="number" placeholder="Eg. 2" min="2" aria-valuemin="2" aria-valuemax="20" max="20" value="4" aria-valuenow="4" aria-describedby="trailer-axleCount-tooltip" required/>
+			<div id="trailer-axleCount-tooltip" class="form-tooltip" role="tooltip">The trailer's axle count</div>
+		</div>
+		
+		<input id="trailer-submit" class="form-submit" type="submit" value="Create / Edit the trailer"/>
+	</section>
+</form>
