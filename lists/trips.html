@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<title>Trips - TruckIt</title>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="author" content="Heather Sawatsky"/>
+<meta name="application-name" content="TruckIt"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+
+<link rel="stylesheet" href="list.css"/>
+
+<div>
+    <header>
+        <h2>Trips</h2>
+    </header>
+
+    <table id="data"></table>
+
+    <a href="../forms/trip.html">Create New</a>
+</div>
+
+<script src="../requests.js"></script>
+<script>
+    getAll("trips");
+</script>

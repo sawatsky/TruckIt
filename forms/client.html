@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<title>Client - TruckIt</title>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="author" content="Heather Sawatsky"/>
+<meta name="application-name" content="TruckIt"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+
+<link rel="stylesheet" href="form.css"/>
+
+<form id="clientForm" class="form">
+	<header id="clientHeader">
+		<h2>Create / Edit a Client</h2>
+	</header>
+
+	<section id="clientContent">
+		<div class="form-field">
+			<label id="client-name-label" class="form-label" for="client-name-input">Name</label>
+			<input id="client-name-input" class="form-input" name="name" type="text" aria-describedby="client-name-tooltip" required autofocus/>
+			<div id="client-name-tooltip" class="form-tooltip" role="tooltip">The name of the company client</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-creditBalance-label" class="form-label" for="client-creditBalance-input">Credit Balance</label>
+			<input id="client-creditBalance-input" class="form-input" name="creditBalance" type="number" placeholder="0.00" pattern="[0-9]+\.[0-9]{2}" aria-describedby="client-creditBalance-tooltip" step="0.01" required/>
+			<div id="client-creditBalance-tooltip" class="form-tooltip" role="tooltip">The client's credit balance</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-currencyType-label" class="form-label" for="client-currencyType-input">Currency Type</label>
+			<select id="client-currencyType-input" class="form-input" name="currencyType" aria-describedby="client-currencyType-tooltip" required>
+				<option value="cad">CAD</option>
+				<option value="usd">USD</option>
+			</select>
+			<div id="client-currencyType-tooltip" class="form-tooltip" role="tooltip">The client's currency type, either Canadian or American</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-creditLimit-label" class="form-label" for="client-creditLimit-input">Credit Limit</label>
+			<input id="client-creditLimit-input" class="form-input" name="creditLimit" type="number" placeholder="0.00" pattern="[0-9]+\.[0-9]{2}" aria-describedby="client-creditLimit-tooltip" step="0.01" required/>
+			<div id="client-creditLimit-tooltip" class="form-tooltip" role="tooltip">The client's credit limit</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-paymentInterval-label" class="form-label" for="client-paymentInterval-input">Payment Interval</label>
+			<select id="client-paymentInterval-input" class="form-input" name="paymentInterval" aria-describedby="client-paymentInterval-tooltip" required>
+				<option value="1">1 month</option>
+				<option value="3">3 months</option>
+				<option value="6">6 months</option>
+			</select>
+			<div id="client-paymentInterval-tooltip" class="form-tooltip" role="tooltip">The client's payment interval</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-taxFormula-label" class="form-label" for="client-taxFormula-input">Tax Formula</label>
+			<textarea id="client-taxFormula-input" class="form-input" name="taxFormula" placeholder="Tax Formula" aria-describedby="client-taxFormula-tooltip" aria-multiline="true" required></textarea>
+			<div id="client-taxFormula-tooltip" class="form-tooltip" role="tooltip">The client's tax formula</div>
+		</div>
+
+		<div class="form-field">
+			<label id="client-rateFormula-label" class="form-label" for="client-rateFormula-input">Rate Formula</label>
+			<textarea id="client-rateFormula-input" class="form-input" name="rateFormula" placeholder="Rate Formula" aria-describedby="client-rateFormula-tooltip" aria-multiline="true" required></textarea>
+			<div id="client-rateFormula-tooltip" class="form-tooltip" role="tooltip">The client's rate formula</div>
+		</div>
+
+		<fieldset class="form-fields" name="dispatch">
+			<legend class="form-legend">Dispatcher Information</legend>
+
+			<div class="form-field">
+				<label id="client-dispatchName-label" class="form-label" for="client-dispatchName-input">Name</label>
+				<input id="client-dispatchName-input" class="form-input" name="dispatchName" type="text" aria-describedby="client-dispatchName-tooltip" required/>
+				<div id="client-dispatchName-tooltip" class="form-tooltip" role="tooltip">The dispatcher's name</div>
+			</div>
+
+			<div class="form-field">
+				<label id="client-dispatchPhone-label" class="form-label" for="client-dispatchPhone-input">Phone</label>
+				<input id="client-dispatchPhone-input" class="form-input" name="dispatchPhone" type="tel" aria-describedby="client-dispatchPhone-tooltip" required/>
+				<div id="client-dispatchPhone-tooltip" class="form-tooltip" role="tooltip">The dispatcher's phone number</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="form-fields" name="billing">
+			<legend class="form-legend">Billing Information</legend>
+
+			<div class="form-field">
+				<label id="client-billingName-label" class="form-label" for="client-billingName-input">Name</label>
+				<input id="client-billingName-input" class="form-input" name="billingName" type="text" aria-describedby="client-billingName-tooltip" required/>
+				<div id="client-billingName-tooltip" class="form-tooltip" role="tooltip">The name of the person to send the bill to</div>
+			</div>
+
+			<div class="form-field">
+				<label id="client-billingPhone-label" class="form-label" for="client-billingPhone-input">Phone</label>
+				<input id="client-billingPhone-input" class="form-input" name="billingPhone" type="tel" aria-describedby="client-billingPhone-tooltip" required/>
+				<div id="client-billingPhone-tooltip" class="form-tooltip" role="tooltip">The phone number of the person to send the bill to</div>
+			</div>
+
+			<fieldset class="form-fields" name="billingAddress">
+				<div class="form-field">
+					<label id="client-billingAddressLine1-label" class="form-label" for="client-billingAddressLine1-input">Address Line 1</label>
+					<input id="client-billingAddressLine1-input" class="form-input" name="billingAddressLine1" type="text" placeholder="Street address, P.O. box, company name, c/o" aria-describedby="client-billingAddressLine1-tooltip" required/>
+					<div id="client-billingAddressLine1-tooltip" class="form-tooltip" role="tooltip">The first line of the billing address, which may be a street address, P.O. box, company name, or c/o</div>
+				</div>
+
+				<div class="form-field">
+					<label id="client-billingAddressLine2-label" class="form-label" for="client-billingAddressLine2-input">Address Line 2</label>
+					<input id="client-billingAddressLine2-input" class="form-input" name="billingAddressLine2" type="text" placeholder="Apartment, suite, unit, building, floor, etc." aria-describedby="client-billingAddressLine2-tooltip" required/>
+					<div id="client-billingAddressLine2-tooltip" class="form-tooltip" role="tooltip">The second line of the billing address, which may be an apartment, suite, unit, building, floor, etc.</div>
+				</div>
+
+				<div class="form-field">
+					<label id="client-billingAddressCity-label" class="form-label" for="client-billingAddressCity-input">City</label>
+					<input id="client-billingAddressCity-input" class="form-input" name="billingAddressCity" type="text" aria-describedby="client-billingAddressCity-tooltip" required/>
+					<div id="client-billingAddressCity-tooltip" class="form-tooltip" role="tooltip">The billing address's city component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="client-billingAddressRegion-label" class="form-label" for="client-billingAddressRegion-input">State/Province/Region</label>
+					<input id="client-billingAddressRegion-input" class="form-input" name="billingAddressRegion" type="text" role="textbox" list="client-billingAddressRegion-list" aria-controls="client-billingAddressRegion-list" aria-expanded="false" aria-multiline="false" aria-describedby="client-billingAddressRegion-tooltip" required/>
+					<datalist id="client-billingAddressRegion-list" role="listbox">
+						<optgroup label="Canada">
+							<option value="ab">Alberta</option>
+							<option value="bc">British Columbia</option>
+						</optgroup>
+						<optgroup label="USA">
+							<option value="wa">Washington</option>
+						</optgroup>
+					</datalist>
+					<div id="client-billingAddressRegion-tooltip" class="form-tooltip" role="tooltip">The billing address's state, province, or region component</div>
+				</div>
+
+				<div class="form-field">
+					<label id="client-billingAddressCode-label" class="form-label" for="client-billingAddressCode-input">Zip/Postal Code</label>
+					<input id="client-billingAddressCode-input" class="form-input" name="billingAddressCode" type="text" aria-describedby="client-billingAddressCode-tooltip" required/>
+					<div id="client-billingAddressCode-tooltip" class="form-tooltip" role="tooltip">The billing address's zip code or postal code component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="client-billingAddressCountry-label" class="form-label" for="client-billingAddressCountry-input">Country</label>
+					<input id="client-billingAddressCountry-input" class="form-input" name="billingAddressCountry" type="text" role="textbox" list="client-billingAddressCountry-list" aria-controls="client-billingAddressCountry-list" aria-expanded="false" aria-multiline="false" aria-describedby="client-billingAddressCountry-tooltip" required/>
+					<datalist id="client-billingAddressCountry-list" role="listbox">
+						<option value="ca">Canada</option>
+						<option value="usa">USA</option>
+					</datalist>
+					<div id="client-billingAddressCountry-tooltip" class="form-tooltip" role="tooltip">The billing address's country component</div>
+				</div>
+			</fieldset>
+		</fieldset>
+
+		<input id="client-submit" class="form-submit" type="submit" value="Create / Edit the client"/>
+	</section>
+</form>

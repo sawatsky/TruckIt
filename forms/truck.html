@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<title>Truck - TruckIt</title>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="author" content="Heather Sawatsky"/>
+<meta name="application-name" content="TruckIt"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+
+<link rel="stylesheet" href="form.css"/>
+
+<form id="truckForm" class="form">
+	<header id="truckHeader">
+		<h2>Create / Edit a Truck</h2>
+	</header>
+	
+	<section id="truckContent">
+		<div class="form-field">
+			<label id="truck-type-label" class="form-label" for="truck-type-input">Type</label>
+			<input id="truck-type-input" class="form-input" name="type" type="text" list="truck-type-list" aria-describedby="truck-type-tooltip" required autofocus/>
+			<datalist id="truck-type-list">
+				<option>Type A</option>
+				<option>Type B</option>
+				<option>Type C</option>
+			</datalist>
+			<div id="truck-type-tooltip" class="form-tooltip" role="tooltip">The truck's type</div>
+		</div>
+
+		<div class="form-field">
+			<label id="truck-mileage-label" class="form-label" for="truck-mileage-input">Mileage</label>
+			<input id="truck-mileage-input" class="form-input" name="mileage" type="number" placeholder="Eg. 6053" aria-describedby="truck-mileage-tooltip" value="0" aria-valuenow="0" min="0" aria-valuemin="0" required/>
+			<div id="truck-mileage-tooltip" class="form-tooltip" role="tooltip">The truck's mileage</div>
+		</div>
+		
+		<div class="form-field">
+			<label id="truck-serviceDate-label" class="form-label" for="truck-serviceDate-input">Service Date</label>
+			<input id="truck-serviceDate-input" class="form-input" name="serviceDate" type="date" aria-describedby="truck-serviceDate-tooltip" required/>
+			<div id="truck-serviceDate-tooltip" class="form-tooltip" role="tooltip">The truck's last service date</div>
+		</div>
+		
+		<input id="truck-submit" class="form-submit" type="submit" value="Create / Edit the trip"/>
+	</section>
+</form>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<title>Trip - TruckIt</title>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="author" content="Heather Sawatsky"/>
+<meta name="application-name" content="TruckIt"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+
+<link rel="stylesheet" href="form.css"/>
+
+<form id="tripForm" class="form">
+	<header id="tripHeader">
+		<h2>Create / Edit a Trip</h2>
+	</header>
+	
+	<section id="tripContent">
+		<fieldset class="form-fields" name="customerAndClient">
+			<legend class="form-legend">Customer and Client</legend>
+
+			<div class="form-field" role="combobox">
+				<label id="trip-customerId-label" class="form-label" for="trip-customerId-input">Customer Name</label>
+				<input id="trip-customerId-input" class="form-input" name="customerId" type="text" role="textbox" list="trip-customerId-list" aria-controls="trip-customerId-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-customerId-tooltip" required autofocus/>
+				<datalist id="trip-customerId-list" role="listbox">
+					<option value="123456789">QFC</option>
+					<option value="987654321">Burger King</option>
+					<option value="192837465">Green Leaf</option>
+				</datalist>
+				<div id="trip-customerId-tooltip" class="form-tooltip" role="tooltip">The customer</div>
+			</div>
+
+			<div class="form-field">
+				<label id="trip-orderNumber-label" class="form-label" for="trip-orderNumber-input">Order Number</label>
+				<input id="trip-orderNumber-input" class="form-input" name="orderNumber" type="text" placeholder="Eg. 0483000482" aria-describedby="trip-orderNumber-tooltip" required/>
+				<div id="trip-orderNumber-tooltip" class="form-tooltip" role="tooltip">The order number</div>
+			</div>
+
+			<div class="form-field" role="combobox">
+				<label id="trip-clientId-label" class="form-label" for="trip-clientId-input">Client Name</label>
+				<input id="trip-clientId-input" class="form-input" name="clientId" type="text" role="textbox" list="trip-clientId-list" aria-controls="trip-clientId-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-clientId-tooltip" required/>
+				<datalist id="trip-clientId-list" role="listbox">
+					<option value="123456789">QFC</option>
+					<option value="987654321">Burger King</option>
+					<option value="192837465">Green Leaf</option>
+				</datalist>
+				<div id="trip-clientId-tooltip" class="form-tooltip" role="tooltip">The client</div>
+			</div>
+
+			<div class="form-field">
+				<label id="trip-purchaseNumber-label" class="form-label" for="trip-purchaseNumber-input">Purchase Number</label>
+				<input id="trip-purchaseNumber-input" class="form-input" name="purchaseNumber" type="text" placeholder="Eg. 00384930001" aria-describedby="trip-purchaseNumber-tooltip" required/>
+				<div id="trip-purchaseNumber-tooltip" class="form-tooltip" role="tooltip">The purchase number</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="form-fields" name="pickup">
+			<legend class="form-legend">Pick up</legend>
+
+			<div class="form-field">
+				<label id="trip-pickupDate-label" class="form-label" for="trip-pickupDate-input">Pickup Date</label>
+				<input id="trip-pickupDate-input" class="form-input" name="pickupDate" type="datetime-local" aria-describedby="trip-pickupDate-tooltip" required/>
+				<div id="trip-pickupDate-tooltip" class="form-tooltip" role="tooltip">The pickup date and time</div>
+			</div>
+
+			<fieldset class="form-fields" name="pickupLocation">
+				<div class="form-field">
+					<label id="trip-pickupLocationLine1-label" class="form-label" for="trip-pickupLocationLine1-input">Address Line 1</label>
+					<input id="trip-pickupLocationLine1-input" class="form-input" name="pickupLocationLine1" type="text" placeholder="Street address, P.O. box, company name, c/o" aria-describedby="trip-pickupLocationLine1-tooltip" required/>
+					<div id="trip-pickupLocationLine1-tooltip" class="form-tooltip" role="tooltip">The first line of the pickup location, which may be a street address, P.O. box, company name, or c/o</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-pickupLocationLine2-label" class="form-label" for="trip-pickupLocationLine2-input">Address Line 2</label>
+					<input id="trip-pickupLocationLine2-input" class="form-input" name="pickupLocationLine2" type="text" placeholder="Apartment, suite, unit, building, floor, etc." aria-describedby="trip-pickupLocationLine2-tooltip" required/>
+					<div id="trip-pickupLocationLine2-tooltip" class="form-tooltip" role="tooltip">The second line of the pickup location, which may be an apartment, suite, unit, building, floor, etc.</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-pickupLocationCity-label" class="form-label" for="trip-pickupLocationCity-input">City</label>
+					<input id="trip-pickupLocationCity-input" class="form-input" name="pickupLocationCity" type="text" aria-describedby="trip-pickupLocationCity-tooltip" required/>
+					<div id="trip-pickupLocationCity-tooltip" class="form-tooltip" role="tooltip">The pickup location's city component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="trip-pickupLocationRegion-label" class="form-label" for="trip-pickupLocationRegion-input">State/Province/Region</label>
+					<input id="trip-pickupLocationRegion-input" class="form-input" name="pickupLocationRegion" type="text" role="textbox" list="trip-pickupLocationRegion-list" aria-controls="trip-pickupLocationRegion-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-pickupLocationRegion-tooltip" required/>
+					<datalist id="trip-pickupLocationRegion-list" role="listbox">
+						<optgroup label="Canada">
+							<option value="ab">Alberta</option>
+							<option value="bc">British Columbia</option>
+						</optgroup>
+						<optgroup label="USA">
+							<option value="wa">Washington</option>
+						</optgroup>
+					</datalist>
+					<div id="trip-pickupLocationRegion-tooltip" class="form-tooltip" role="tooltip">The pickup location's state, province, or region component</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-pickupLocationCode-label" class="form-label" for="trip-pickupLocationCode-input">Zip/Postal Code</label>
+					<input id="trip-pickupLocationCode-input" class="form-input" name="pickupLocationCode" type="text" aria-describedby="trip-pickupLocationCode-tooltip" required/>
+					<div id="trip-pickupLocationCode-tooltip" class="form-tooltip" role="tooltip">The pickup location's zip code or postal code component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="trip-pickupLocationCountry-label" class="form-label" for="trip-pickupLocationCountry-input">Country</label>
+					<input id="trip-pickupLocationCountry-input" class="form-input" name="pickupLocationCountry" type="text" role="textbox" list="trip-pickupLocationCountry-list" aria-controls="trip-pickupLocationCountry-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-pickupLocationCountry-tooltip" required/>
+					<datalist id="trip-pickupLocationCountry-list" role="listbox">
+						<option value="ca">Canada</option>
+						<option value="usa">USA</option>
+					</datalist>
+					<div id="trip-pickupLocationCountry-tooltip" class="form-tooltip" role="tooltip">The pickup location's country component</div>
+				</div>
+			</fieldset>
+		</fieldset>
+
+		<fieldset class="form-fields" name="dropoff">
+			<legend class="form-legend">Drop off</legend>
+
+			<div class="form-field">
+				<label id="trip-deliveryDate-label" class="form-label" for="trip-deliveryDate-input">Delivery Date</label>
+				<input id="trip-deliveryDate-input" class="form-input" name="deliveryDate" type="datetime-local" aria-describedby="trip-deliveryDate-tooltip" required/>
+				<div id="trip-deliveryDate-tooltip" class="form-tooltip" role="tooltip">The delivery date and time</div>
+			</div>
+
+			<fieldset class="form-fields" name="deliveryLocation">
+				<div class="form-field">
+					<label id="trip-deliveryLocationLine1-label" class="form-label" for="trip-deliveryLocationLine1-input">Address Line 1</label>
+					<input id="trip-deliveryLocationLine1-input" class="form-input" name="deliveryLocationLine1" type="text" placeholder="Street address, P.O. box, company name, c/o" aria-describedby="trip-deliveryLocationLine1-tooltip" required/>
+					<div id="trip-deliveryLocationLine1-tooltip" class="form-tooltip" role="tooltip">The first line of the delivery location, which may be a street address, P.O. box, company name, or c/o</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-deliveryLocationLine2-label" class="form-label" for="trip-deliveryLocationLine2-input">Address Line 2</label>
+					<input id="trip-deliveryLocationLine2-input" class="form-input" name="deliveryLocationLine2" type="text" placeholder="Apartment, suite, unit, building, floor, etc." aria-describedby="trip-deliveryLocationLine2-tooltip" required/>
+					<div id="trip-deliveryLocationLine2-tooltip" class="form-tooltip" role="tooltip">The second line of the delivery location, which may be an apartment, suite, unit, building, floor, etc.</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-deliveryLocationCity-label" class="form-label" for="trip-deliveryLocationCity-input">City</label>
+					<input id="trip-deliveryLocationCity-input" class="form-input" name="deliveryLocationCity" type="text" aria-describedby="trip-deliveryLocationCity-tooltip" required/>
+					<div id="trip-deliveryLocationCity-tooltip" class="form-tooltip" role="tooltip">The delivery location's city component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="trip-deliveryLocationRegion-label" class="form-label" for="trip-deliveryLocationRegion-input">State/Province/Region</label>
+					<input id="trip-deliveryLocationRegion-input" class="form-input" name="deliveryLocationRegion" type="text" role="textbox" list="trip-deliveryLocationRegion-list" aria-controls="trip-deliveryLocationRegion-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-deliveryLocationRegion-tooltip" required/>
+					<datalist id="trip-deliveryLocationRegion-list" role="listbox">
+						<optgroup label="Canada">
+							<option value="ab">Alberta</option>
+							<option value="bc">British Columbia</option>
+						</optgroup>
+						<optgroup label="USA">
+							<option value="wa">Washington</option>
+						</optgroup>
+					</datalist>
+					<div id="trip-deliveryLocationRegion-tooltip" class="form-tooltip" role="tooltip">The delivery location's state, province, or region component</div>
+				</div>
+
+				<div class="form-field">
+					<label id="trip-deliveryLocationCode-label" class="form-label" for="trip-deliveryLocationCode-input">Zip/Postal Code</label>
+					<input id="trip-deliveryLocationCode-input" class="form-input" name="deliveryLocationCode" type="text" aria-describedby="trip-deliveryLocationCode-tooltip" required/>
+					<div id="trip-deliveryLocationCode-tooltip" class="form-tooltip" role="tooltip">The delivery location's zip code or postal code component</div>
+				</div>
+
+				<div class="form-field" role="combobox">
+					<label id="trip-deliveryLocationCountry-label" class="form-label" for="trip-deliveryLocationCountry-input">Country</label>
+					<input id="trip-deliveryLocationCountry-input" class="form-input" name="deliveryLocationCountry" type="text" role="textbox" list="trip-deliveryLocationCountry-list" aria-controls="trip-deliveryLocationCountry-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-deliveryLocationCountry-tooltip" required/>
+					<datalist id="trip-deliveryLocationCountry-list" role="listbox">
+						<option value="ca">Canada</option>
+						<option value="usa">USA</option>
+					</datalist>
+					<div id="trip-deliveryLocationCountry-tooltip" class="form-tooltip" role="tooltip">The delivery location's country component</div>
+				</div>
+			</fieldset>
+
+			<input id="trip-addDelivery" type="button" value="Add another drop point"/>
+		</fieldset>
+
+		<fieldset class="form-fields" name="pricing">
+			<legend class="form-legend">Pricing</legend>
+
+			<div class="form-field">
+				<label id="trip-fuelSurcharge-label" class="form-label" for="trip-fuelSurcharge-input">Fuel Surcharge (per mile)</label>
+				<input id="trip-fuelSurcharge-input" class="form-input" name="fuelSurcharge" type="number" placeholder="0.00" pattern="[0-9]+\.[0-9]{2}" aria-describedby="trip-fuelSurcharge-tooltip" min="0" aria-valuemin="0" step="0.01" required/>
+				<div id="trip-fuelSurcharge-tooltip" class="form-tooltip" role="tooltip">The fuel surcharge per mile</div>
+			</div>
+
+			<div class="form-field">
+				<label id="trip-rateFormula-label" class="form-label" for="trip-rateFormula-input">Rate Formula</label>
+				<textarea id="trip-rateFormula-input" class="form-input" name="rateFormula" placeholder="Rate Formula" aria-describedby="trip-rateFormula-tooltip" aria-multiline="true" required></textarea>
+				<div id="trip-rateFormula-tooltip" class="form-tooltip" role="tooltip">The rate formula</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="form-fields" name="truckTrailerDriver">
+			<legend class="form-legend">Truck and Driver</legend>
+
+			<div class="form-field" role="combobox">
+				<label id="trip-driverId-label" class="form-label" for="trip-driverId-input">Driver</label>
+				<input id="trip-driverId-input" class="form-input" name="driverId" type="text" role="textbox" list="trip-driverId-list" aria-controls="trip-driverId-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-driverId-tooltip" required/>
+				<datalist id="trip-driverId-list" role="listbox">
+					<option value="123456789">John Smith</option>
+					<option value="987654321">Jane Doe</option>
+					<option value="192837465">Gordon Ramsey</option>
+				</datalist>
+				<div id="trip-driverId-tooltip" class="form-tooltip" role="tooltip">The truck driver</div>
+			</div>
+
+			<div class="form-field" role="combobox">
+				<label id="trip-truckId-label" class="form-label" for="trip-truckId-input">Truck</label>
+				<input id="trip-truckId-input" class="form-input" name="truckId" type="text" role="textbox" list="trip-truckId-list" aria-controls="trip-truckId-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-truckId-tooltip" required/>
+				<datalist id="trip-truckId-list" role="listbox">
+					<option value="123456789">Toyota</option>
+					<option value="987654321">Nissan</option>
+					<option value="192837465">Tesla</option>
+				</datalist>
+				<div id="trip-truckId-tooltip" class="form-tooltip" role="tooltip">The truck</div>
+			</div>
+
+			<div class="form-field" role="combobox">
+				<label id="trip-trailerId-label" class="form-label" for="trip-trailerId-input">Trailer</label>
+				<input id="trip-trailerId-input" class="form-input" name="trailerId" type="text" role="textbox" list="trip-trailerId-list" aria-controls="trip-trailerId-list" aria-expanded="false" aria-multiline="false" aria-describedby="trip-trailerId-tooltip" required/>
+				<datalist id="trip-trailerId-list" role="listbox">
+					<option value="123456789">The short one</option>
+					<option value="987654321">The medium one</option>
+					<option value="192837465">The long one</option>
+				</datalist>
+				<div id="trip-trailerId-tooltip" class="form-tooltip" role="tooltip">The trailer</div>
+			</div>
+		</fieldset>
+		
+		<input id="trip-submit" class="form-submit" type="submit" value="Create / Edit the trip"/>
+	</section>
+</form>
