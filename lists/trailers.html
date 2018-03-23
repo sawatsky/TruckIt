@@ -17,12 +17,33 @@
         <h2>Trailers</h2>
     </header>
 
-    <table id="data"></table>
+    <table>
+        <tr>
+            <th>Rented or Owned</th>
+            <th>Axle Count</th>
+            <th>Actions</th>
+        </tr>
+        <tr onclick="window.location='../item/trailer.html'">
+            <td>Owned</td>
+            <td>6</td>
+            <td><a href="../forms/trailer.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/trailer.html'">
+            <td>Owned</td>
+            <td>12</td>
+            <td><a href="../forms/trailer.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/trailer.html'">
+            <td>Rented</td>
+            <td>4</td>
+            <td><a href="../forms/trailer.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/trailer.html'">
+            <td>Owned</td>
+            <td>8</td>
+            <td><a href="../forms/trailer.html">Edit</a> | Delete</td>
+        </tr>
+    </table>
 
     <a href="../forms/trailer.html">Create New</a>
 </div>
-
-<script src="../requests.js"></script>
-<script>
-    getAll("trailers");
-</script>

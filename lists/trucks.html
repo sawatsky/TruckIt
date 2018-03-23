@@ -17,12 +17,33 @@
         <h2>Trucks</h2>
     </header>
 
-    <table id="data"></table>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Mileage</th>
+            <th>Actions</th>
+        </tr>
+        <tr onclick="window.location='../item/truck.html'">
+            <td>Type A</td>
+            <td>5134</td>
+            <td><a href="../forms/truck.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/truck.html'">
+            <td>Type B</td>
+            <td>123412</td>
+            <td><a href="../forms/truck.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/truck.html'">
+            <td>Type C</td>
+            <td>234123</td>
+            <td><a href="../forms/truck.html">Edit</a> | Delete</td>
+        </tr>
+        <tr onclick="window.location='../item/truck.html'">
+            <td>Type B</td>
+            <td>12342</td>
+            <td><a href="../forms/truck.html">Edit</a> | Delete</td>
+        </tr>
+    </table>
 
     <a href="../forms/truck.html">Create New</a>
 </div>
-
-<script src="../requests.js"></script>
-<script>
-    getAll("trucks");
-</script>
